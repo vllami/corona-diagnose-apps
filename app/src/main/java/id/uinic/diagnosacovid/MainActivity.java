@@ -106,4 +106,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Anda belum memilih", Toast.LENGTH_LONG).show();
         }
     }
+
+    public void btnPertanyaanSebelumnya(View view) {
+        onBackPressed();
+    }
 }
