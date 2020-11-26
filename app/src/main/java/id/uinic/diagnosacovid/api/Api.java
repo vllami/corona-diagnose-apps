@@ -14,6 +14,7 @@ public class Api {
                     .setLenient()
                     .create();
 
+            String BASE_URL = null;
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create(gson))
