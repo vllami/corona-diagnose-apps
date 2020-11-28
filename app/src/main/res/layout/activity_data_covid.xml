@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="dataCovid"
-            type="id.uinic.diagnosacovid.model.DataCovid"/>
+            type="id.uinic.diagnosacovid.model.DataCovid" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="24dp"
         android:background="#F0EFF2"
+        android:padding="24dp"
         tools:context=".ui.dataterbaru.DataCovidActivity">
 
         <LinearLayout
@@ -38,9 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:text="@{dataCovid.positif}"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="@{dataCovid.positif}"
                 tools:text="Jumlah Positif" />
         </LinearLayout>
 
@@ -67,9 +68,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:text="@{dataCovid.sembuh}"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="@{dataCovid.sembuh}"
                 tools:text="Jumlah Sembuh" />
         </LinearLayout>
 
@@ -96,9 +97,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:text="@{dataCovid.meninggal}"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="@{dataCovid.meninggal}"
                 tools:text="Jumlah Meninggal" />
         </LinearLayout>
 
@@ -125,9 +126,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:text="@{dataCovid.dirawat}"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="@{dataCovid.dirawat}"
                 tools:text="Jumlah Dirawat" />
         </LinearLayout>
 
@@ -135,9 +136,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16"
-            android:text="@string/sumber_data_text"
-            android:textColor="@color/black"
+            android:text="@string/data_covid_sumber_data"
             android:textAlignment="center"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
