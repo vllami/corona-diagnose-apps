@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import id.uinic.diagnosacovid.ui.dataterbaru.DataCovidActivity;
+import id.uinic.diagnosacovid.ui.quisioner.MainActivity;
 
 public class HomeActivity extends AppCompatActivity {
 

@@ -31,4 +31,7 @@
     <string name="result_header_saran_kami">Saran Kami</string>
     <string name="result_saran_kami">(Saran Kami)</string>
     <string name="sumber_data_text">Sumber Data : http://api.kawalkorona.com/indonesia</string>
+    <string name="alert_back_when_diagnosa">Anda Sedang Melakukan Diagnosa, yakin ingin keluar ?</string>
+    <string name="batal_text">Batal</string>
+    <string name="ya">Ya</string>
 </resources>

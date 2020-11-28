@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0EFF2"
-    tools:context=".MainActivity">
+    tools:context=".ui.quisioner.MainActivity">
 
     <TextView
         android:id="@+id/header"
@@ -144,7 +144,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/_16sdp"
         android:background="@drawable/radius_primary_button"
         android:fontFamily="@font/nunito_extrabold"
         android:onClick="btnPertanyaanSelanjutnya"
@@ -152,34 +152,12 @@
         android:textAllCaps="false"
         android:textColor="#DDEFF8"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_sebelumnya"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/btn_sebelumnya"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="39dp"
-        android:background="@drawable/radius_secondary_button"
-        android:fontFamily="@font/nunito_extrabold"
-        android:onClick="btnPertanyaanSebelumnya"
-        android:text="@string/main_previous"
-        android:textAllCaps="false"
-        android:textColor="#428CD4"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

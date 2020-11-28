@@ -1,9 +1,12 @@
-package id.uinic.diagnosacovid;
+package id.uinic.diagnosacovid.ui.quisioner;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -11,15 +14,19 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import id.uinic.diagnosacovid.R;
+import id.uinic.diagnosacovid.ResultActivity;
+
+import static id.uinic.diagnosacovid.R.string.alert_back_when_diagnosa;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView pertanyaan;
     RadioGroup radio;
     RadioButton ya, tidak;
     int nomor = 0;
+    Boolean selesai;
     public static int result, jawabanYa, jawabanTidak;
-
-    Button btnSebelumnya;
 
     // Pertanyaan
     String[] pertanyaan_diagnosa = new String[]{
@@ -68,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSebelumnya = findViewById(R.id.btn_sebelumnya);
         pertanyaan = findViewById(R.id.pertanyaan);
         radio = findViewById(R.id.pilihan);
         ya = findViewById(R.id.ya);
@@ -77,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         pertanyaan.setText(pertanyaan_diagnosa[nomor]);
         ya.setText(jawaban[0]);
         tidak.setText(jawaban[1]);
+
+        selesai = false;
 
         radio.check(0);
         jawabanYa = 0;
@@ -99,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
                 result = jawabanYa * 10;
+                selesai = true;
                 Intent selesai = new Intent(getApplicationContext(), ResultActivity.class);
                 startActivity(selesai);
             }
@@ -107,7 +116,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void btnPertanyaanSebelumnya(View view) {
-        onBackPressed();
+    @Override
+    public void onBackPressed() {
+        if (selesai){
+            super.onBackPressed();
+        } else {
+            new AlertDialog.Builder(new ContextThemeWrapper(MainActivity.this, R.style.CustomAlertDialog))
+                    .setIcon(R.drawable.ic_alert)
+                    .setTitle("Pertanyaan Belum Selesai")
+                    .setMessage("Yakin ingin keluar ?")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                    .show();
+        }
     }
 }
