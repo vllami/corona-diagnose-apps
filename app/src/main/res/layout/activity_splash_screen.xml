@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="#FFFFFF"
-    tools:context=".ui.splashscreen.SplashScreenActivity">
-=======
     android:background="#F0EFF2"
-    tools:context=".SplashScreenActivity">
->>>>>>> buatresponsifactivityhome
+    tools:context=".ui.splashscreen.SplashScreenActivity">
 
     <ImageView
         android:id="@+id/img_splash_screen"
