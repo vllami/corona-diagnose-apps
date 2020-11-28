@@ -1,8 +1,10 @@
-package id.uinic.diagnosacovid;
+package id.uinic.diagnosacovid.ui.dataterbaru;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import id.uinic.diagnosacovid.R;
 
 public class DataCovidActivity extends AppCompatActivity {
 
