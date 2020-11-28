@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".SplashScreenActivity">
+    tools:context=".ui.SplashScreenActivity">
 
     <ImageView
         android:id="@+id/splashScreen"
@@ -14,31 +14,30 @@
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:src="@drawable/splash_screen"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/copyright"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.322"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
+        app:layout_constraintVertical_bias="0.553"
         tools:ignore="MissingConstraints,ContentDescription" />
 
     <TextView
         android:id="@+id/copyright"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="205dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="33dp"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/nunito_light"
         android:gravity="center"
         android:text="@string/splash_screen_copyright"
         android:textColor="#403D3B"
         android:textSize="@dimen/_11ssp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/splashScreen"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/splashScreen"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/splashScreen"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package id.uinic.diagnosacovid;
+package id.uinic.diagnosacovid.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import id.uinic.diagnosacovid.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0EFF2"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <TextView
         android:id="@+id/header"
@@ -145,7 +145,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/radius_primary_button"
+        android:background="@drawable/rounded_primary_button"
         android:fontFamily="@font/nunito_extrabold"
         android:onClick="btnPertanyaanSelanjutnya"
         android:text="@string/main_next"
@@ -169,7 +169,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="39dp"
-        android:background="@drawable/radius_secondary_button"
+        android:background="@drawable/rounded_secondary_button"
         android:fontFamily="@font/nunito_extrabold"
         android:onClick="btnPertanyaanSebelumnya"
         android:text="@string/main_previous"

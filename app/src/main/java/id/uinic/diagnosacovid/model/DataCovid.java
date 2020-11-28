@@ -1,25 +1,17 @@
 package id.uinic.diagnosacovid.model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class DataCovid {
 
     @SerializedName("name")
-    @Expose
     private String name;
     @SerializedName("positif")
-    @Expose
     private String positif;
     @SerializedName("sembuh")
-    @Expose
     private String sembuh;
     @SerializedName("meninggal")
-    @Expose
     private String meninggal;
-    @SerializedName("dirawat")
-    @Expose
-    private String dirawat;
 
     public String getName() {
         return name;
@@ -53,12 +45,15 @@ public class DataCovid {
         this.meninggal = meninggal;
     }
 
-    public String getDirawat() {
-        return dirawat;
-    }
-
-    public void setDirawat(String dirawat) {
-        this.dirawat = dirawat;
+    @Override
+    public String toString() {
+        return
+                "DataCovid{" +
+                        "name = '" + name + '\'' +
+                        ",positif = '" + positif + '\'' +
+                        ",sembuh = '" + sembuh + '\'' +
+                        ",meninggal = '" + meninggal + '\'' +
+                        "}";
     }
 
 }

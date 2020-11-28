@@ -3,7 +3,7 @@
 
     <string name="splash_screen_copyright">Copyright © 2020 | Vizain Dev</string>
 
-    <string name="home_header">Halo, selamat pagi Sehat selalu yaa..</string>
+    <string name="home_header">Halo, selamat datang Sehat selalu yaa..</string>
     <string name="home_sub_header">Aplikasi ini membantu Anda mengetahui status COVID-19 pada diri Anda. Untuk itu, mari kita semua saling menjaga kesehatan satu sama lain, agar kita semua terbebas dari virus dan penyakit menular.</string>
     <string name="home_btn_mulai_diagnosa">Mulai Diagnosa</string>
     <string name="home_btn_hasil_sebelumnya">Lihat Hasil Sebelumnya</string>
