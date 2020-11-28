@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import id.uinic.diagnosacovid.ui.dataterbaru.DataCovidActivity;
+
 public class HomeActivity extends AppCompatActivity {
 
     Animation animLeft, animRight;
@@ -43,5 +45,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void btnMulaiDiagnosa(View view) {
+    }
+
+    public void goToDataCovid(View view) {
+        Intent i = new Intent(HomeActivity.this, DataCovidActivity.class);
+        startActivity(i);
     }
 }

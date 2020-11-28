@@ -1,4 +1,5 @@
 package id.uinic.diagnosacovid.util;
 
-class Cons {
+public class Const {
+    public static String BASE_URL = "https://api.kawalcorona.com/";
 }
