@@ -60,5 +60,4 @@ public class DataCovid {
     public void setDirawat(String dirawat) {
         this.dirawat = dirawat;
     }
-
 }

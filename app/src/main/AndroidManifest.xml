@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="id.uinic.diagnosacovid">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +13,7 @@
         android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge"
         tools:ignore="AllowBackup">
         <activity android:name=".AboutCovidActivity" />
-        <activity android:name=".DataCovidActivity" />
+        <activity android:name=".ui.dataterbaru.DataCovidActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PreviousResultActivity" />
