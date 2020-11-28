@@ -44,7 +44,7 @@
     <ImageView
         android:id="@+id/dokter"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/_150sdp"
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/_16sdp"
         android:background="@drawable/img_doctor"
