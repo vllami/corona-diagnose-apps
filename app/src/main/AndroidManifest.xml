@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge"
         tools:ignore="AllowBackup">
-        <activity android:name=".AboutCovidActivity" />
+        <activity android:name=".ui.about.AboutCovidActivity" />
         <activity android:name=".ui.dataterbaru.DataCovidActivity" />
         <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.quisioner.MainActivity" />
         <activity android:name=".ui.previousresult.PreviousResultActivity" />
         <activity android:name=".ui.result.ResultActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".ui.splashscreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
