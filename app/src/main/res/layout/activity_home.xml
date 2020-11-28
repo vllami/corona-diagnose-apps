@@ -28,7 +28,7 @@
     <TextView
         android:id="@+id/penjelasan"
         android:layout_width="207dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/nunito"
         android:text="@string/home_sub_header"
         android:textColor="#4B4B53"

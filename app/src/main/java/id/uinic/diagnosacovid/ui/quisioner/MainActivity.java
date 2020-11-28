@@ -3,8 +3,11 @@ package id.uinic.diagnosacovid.ui.quisioner;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.view.View;
@@ -14,12 +17,22 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import id.uinic.diagnosacovid.R;
 import id.uinic.diagnosacovid.ResultActivity;
+import id.uinic.diagnosacovid.database.DatabaseHelper;
 
 import static id.uinic.diagnosacovid.R.string.alert_back_when_diagnosa;
+import static id.uinic.diagnosacovid.util.Const.JAWABAN_KEY;
+import static id.uinic.diagnosacovid.util.Const.RESULT_KEY;
 
 public class MainActivity extends AppCompatActivity {
+
+    protected Cursor cursor;
+    DatabaseHelper dbHelper;
 
     TextView pertanyaan;
     RadioGroup radio;
@@ -27,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     int nomor = 0;
     Boolean selesai;
     public static int result, jawabanYa, jawabanTidak;
+
+
 
     // Pertanyaan
     String[] pertanyaan_diagnosa = new String[]{
@@ -84,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
         ya.setText(jawaban[0]);
         tidak.setText(jawaban[1]);
 
+        dbHelper = new DatabaseHelper(this);
+
         selesai = false;
 
         radio.check(0);
@@ -109,11 +126,29 @@ public class MainActivity extends AppCompatActivity {
                 result = jawabanYa * 10;
                 selesai = true;
                 Intent selesai = new Intent(getApplicationContext(), ResultActivity.class);
+                selesai.putExtra(JAWABAN_KEY, jawaban_ya);
+                selesai.putExtra(RESULT_KEY, result);
                 startActivity(selesai);
+
+                simpanDataDiagnosa();
             }
         } else {
             Toast.makeText(this, "Anda belum memilih", Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void simpanDataDiagnosa() {
+        @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateTime = df.format(Calendar.getInstance().getTime());
+
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.execSQL("insert into diagnosa(tanggal_diagnosa, jawabanYa, result) values('" +
+                dateTime + "','" +
+                jawabanYa + "','" +
+                result + "')");
+        Toast.makeText(getApplicationContext(), "Berhasil" ,
+                Toast.LENGTH_LONG).show();
+        finish();
     }
 
     @Override

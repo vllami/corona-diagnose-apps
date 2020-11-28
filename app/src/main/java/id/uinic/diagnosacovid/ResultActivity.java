@@ -9,12 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 import id.uinic.diagnosacovid.ui.home.HomeActivity;
-import id.uinic.diagnosacovid.ui.quisioner.MainActivity;
+
+import static id.uinic.diagnosacovid.util.Const.JAWABAN_KEY;
+import static id.uinic.diagnosacovid.util.Const.RESULT_KEY;
 
 public class ResultActivity extends AppCompatActivity {
 
     TextView keterangan, saran;
+    Integer resultExtra, jawabanExtra;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -27,12 +31,15 @@ public class ResultActivity extends AppCompatActivity {
 
         TextView result = findViewById(R.id.hasil);
 
-        result.setText("Mengalami " + MainActivity.jawabanYa + " dari 10 gejala yang disebutkan.");
+        resultExtra = getIntent().getIntExtra(RESULT_KEY, 0);
+        jawabanExtra = getIntent().getIntExtra(JAWABAN_KEY, 0);
 
-        if (MainActivity.result >= 80) {
+        result.setText("Mengalami " + jawabanExtra + " dari 10 gejala yang disebutkan.");
+
+        if (resultExtra >= 80) {
             keterangan.setText("Anda terinfeksi COVID-19");
             saran.setText("SEGERA LAKUKAN isolasi mandiri dirumah selama kurang lebih 2 minggu, dan Anda TIDAK DIPERKENANKAN untuk keluar rumah");
-        } else if (MainActivity.result >= 60 && MainActivity.result < 90) {
+        } else if (resultExtra >= 60 && resultExtra < 90) {
             keterangan.setText("Anda memiliki kemungkinan terinfeksi COVID-19");
             saran.setText("LAKUKAN isolasi mandiri, selalu GUNAKAN MASKER saat keluar rumah, dan HINDARI kerumunan");
         } else {

@@ -14,8 +14,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE diagnosa(nodiagnosa integer PRIMARY KEY AUTOINCREMENT, tanggal_diagnosa datetime, jawabanYa integer, result integer)");
     }
 
     @Override
