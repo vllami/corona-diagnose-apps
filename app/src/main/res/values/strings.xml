@@ -30,5 +30,6 @@
     <string name="result_keterangan">(Keterangan)</string>
     <string name="result_header_saran_kami">Saran Kami</string>
     <string name="result_saran_kami">(Saran Kami)</string>
-    <string name="sumber_data_text">Sumber Data : http://api.kawalkorona.com/indonesia</string>
+
+    <string name="data_covid_sumber_data">Sumber Data : http://api.kawalkorona.com/indonesia</string>
 </resources>
