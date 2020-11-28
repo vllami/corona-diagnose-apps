@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import id.uinic.diagnosacovid.R;
 import id.uinic.diagnosacovid.ui.dataterbaru.DataCovidActivity;
+import id.uinic.diagnosacovid.ui.previousresult.PreviousResultActivity;
 import id.uinic.diagnosacovid.ui.quisioner.MainActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -51,6 +52,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void goToDataCovid(View view) {
         Intent i = new Intent(HomeActivity.this, DataCovidActivity.class);
+        startActivity(i);
+    }
+
+    public void goToHistoryDiagnosa(View view) {
+        Intent i = new Intent(HomeActivity.this, PreviousResultActivity.class);
         startActivity(i);
     }
 }

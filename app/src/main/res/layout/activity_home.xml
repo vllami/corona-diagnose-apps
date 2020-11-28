@@ -28,7 +28,7 @@
     <TextView
         android:id="@+id/penjelasan"
         android:layout_width="207dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/nunito"
         android:text="@string/home_sub_header"
         android:textColor="#4B4B53"
@@ -91,6 +91,7 @@
         android:textAllCaps="false"
         android:textColor="#428CD4"
         android:textSize="17sp"
+        android:onClick="goToHistoryDiagnosa"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
