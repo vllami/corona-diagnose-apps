@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/colorWhite"
     tools:context=".ui.DataCovidActivity">
 
     <LinearLayout
@@ -29,13 +29,16 @@
                 android:layout_height="wrap_content"
                 android:text="100"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorBlue"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Positif" />
+                android:fontFamily="@font/nunito"
+                android:text="Positif"
+                android:textColor="@color/colorDarkGrey" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,13 +56,15 @@
                 android:layout_height="wrap_content"
                 android:text="100"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorGreen"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Sembuh" />
+                android:text="Sembuh"
+                android:textColor="@color/colorDarkGrey" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,13 +81,15 @@
                 android:layout_height="wrap_content"
                 android:text="100"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorRed"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Meninggal" />
+                android:text="Meninggal"
+                android:textColor="@color/colorDarkGrey" />
         </LinearLayout>
     </LinearLayout>
 

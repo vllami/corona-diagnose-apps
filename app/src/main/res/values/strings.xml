@@ -30,4 +30,6 @@
     <string name="result_keterangan">(Keterangan)</string>
     <string name="result_header_saran_kami">Saran Kami</string>
     <string name="result_saran_kami">(Saran Kami)</string>
+
+    <string name="data_covid_header">Data COVID-19 di Indonesia</string>
 </resources>
