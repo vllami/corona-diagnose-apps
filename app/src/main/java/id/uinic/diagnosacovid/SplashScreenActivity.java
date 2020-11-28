@@ -33,7 +33,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         animBottom = AnimationUtils.loadAnimation(this, R.anim.anim_bottom);
 
         // Call
-        image = findViewById(R.id.splashScreen);
+        image = findViewById(R.id.splash_screen);
         copyright = findViewById(R.id.copyright);
 
         image.setAnimation(animFade);
