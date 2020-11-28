@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import id.uinic.diagnosacovid.ui.home.HomeActivity;
+
 public class SplashScreenActivity extends AppCompatActivity {
 
     private static final int SPLASH_SCREEN = 5000;

@@ -1,4 +1,4 @@
-package id.uinic.diagnosacovid;
+package id.uinic.diagnosacovid.ui.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import id.uinic.diagnosacovid.R;
 import id.uinic.diagnosacovid.ui.dataterbaru.DataCovidActivity;
 import id.uinic.diagnosacovid.ui.quisioner.MainActivity;
 

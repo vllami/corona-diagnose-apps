@@ -15,7 +15,7 @@
         tools:ignore="AllowBackup">
         <activity android:name=".AboutCovidActivity" />
         <activity android:name=".ui.dataterbaru.DataCovidActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.quisioner.MainActivity" />
         <activity android:name=".PreviousResultActivity" />
         <activity android:name=".ResultActivity" />

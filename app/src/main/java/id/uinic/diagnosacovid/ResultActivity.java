@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import id.uinic.diagnosacovid.ui.home.HomeActivity;
 import id.uinic.diagnosacovid.ui.quisioner.MainActivity;
 
 public class ResultActivity extends AppCompatActivity {

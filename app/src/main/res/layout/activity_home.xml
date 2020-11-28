@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/btn_data_covid"
     android:onClick="goToDataCovid"
@@ -7,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0EFF2"
-    tools:context=".HomeActivity">
+    tools:context=".ui.home.HomeActivity">
 
     <TextView
         android:id="@+id/header"
@@ -27,18 +28,17 @@
     <TextView
         android:id="@+id/penjelasan"
         android:layout_width="207dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginBottom="@dimen/_57sdp"
+        android:layout_height="0dp"
         android:fontFamily="@font/nunito"
         android:text="@string/home_sub_header"
         android:textColor="#4B4B53"
         android:textSize="@dimen/_14ssp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_mulai_diagnosa"
+        app:layout_constraintEnd_toStartOf="@+id/dokter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        tools:ignore="MissingConstraints,RtlSymmetry,UnusedAttribute" />
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <ImageView
         android:id="@+id/dokter"
@@ -104,7 +104,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
         <TextView
