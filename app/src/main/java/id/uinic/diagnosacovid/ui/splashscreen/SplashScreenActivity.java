@@ -16,12 +16,7 @@ import id.uinic.diagnosacovid.ui.home.HomeActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private static final int SPLASH_SCREEN = 5000;
-
-    // Animation Variable
-    Animation animFade, animBottom;
-    ImageView image;
-    TextView copyright;
+    private static final int SPLASH_SCREEN = 3500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +25,15 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         // Animation
-        animFade = AnimationUtils.loadAnimation(this, R.anim.anim_fade);
-        animBottom = AnimationUtils.loadAnimation(this, R.anim.anim_bottom);
+        Animation animFade = AnimationUtils.loadAnimation(this, R.anim.anim_fade);
+        Animation animBottom = AnimationUtils.loadAnimation(this, R.anim.anim_bottom);
 
-        // Call
-        image = findViewById(R.id.splashScreen);
-        copyright = findViewById(R.id.copyright);
+        // Call ID
+        ImageView imgSplashScreen = findViewById(R.id.img_splash_screen);
+        TextView tvCopyright = findViewById(R.id.tv_copyright);
 
-        image.setAnimation(animFade);
-        copyright.setAnimation(animBottom);
+        imgSplashScreen.setAnimation(animFade);
+        tvCopyright.setAnimation(animBottom);
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(SplashScreenActivity.this, HomeActivity.class);

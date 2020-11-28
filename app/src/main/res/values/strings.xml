@@ -34,6 +34,11 @@
     <string name="alert_back_when_diagnosa">Anda Sedang Melakukan Diagnosa, yakin ingin keluar ?</string>
     <string name="batal_text">Batal</string>
     <string name="ya">Ya</string>
+<<<<<<< HEAD
     <string name="data_covid_sumber_data">Sumber Data : http://api.kawalkorona.com/indonesia</string>
     <string name="previous_result_header">Riwayat Diagnosa</string>
+=======
+
+    <string name="data_covid_sumber_data">Sumber Data : http://api.kawalkorona.com/indonesia</string>
+>>>>>>> buatresponsifactivityhome
 </resources>
