@@ -17,8 +17,8 @@
         <activity android:name=".ui.dataterbaru.DataCovidActivity" />
         <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.quisioner.MainActivity" />
-        <activity android:name=".PreviousResultActivity" />
-        <activity android:name=".ResultActivity" />
+        <activity android:name=".ui.previousresult.PreviousResultActivity" />
+        <activity android:name=".ui.result.ResultActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

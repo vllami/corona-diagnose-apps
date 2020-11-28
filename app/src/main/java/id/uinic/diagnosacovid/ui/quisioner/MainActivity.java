@@ -11,7 +11,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -22,10 +21,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import id.uinic.diagnosacovid.R;
-import id.uinic.diagnosacovid.ResultActivity;
+import id.uinic.diagnosacovid.ui.result.ResultActivity;
 import id.uinic.diagnosacovid.database.DatabaseHelper;
 
-import static id.uinic.diagnosacovid.R.string.alert_back_when_diagnosa;
 import static id.uinic.diagnosacovid.util.Const.JAWABAN_KEY;
 import static id.uinic.diagnosacovid.util.Const.RESULT_KEY;
 

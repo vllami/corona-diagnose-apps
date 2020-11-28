@@ -1,4 +1,4 @@
-package id.uinic.diagnosacovid;
+package id.uinic.diagnosacovid.ui.result;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import id.uinic.diagnosacovid.R;
 import id.uinic.diagnosacovid.ui.home.HomeActivity;
 
 import static id.uinic.diagnosacovid.util.Const.JAWABAN_KEY;

@@ -35,4 +35,5 @@
     <string name="batal_text">Batal</string>
     <string name="ya">Ya</string>
     <string name="data_covid_sumber_data">Sumber Data : http://api.kawalkorona.com/indonesia</string>
+    <string name="previous_result_header">Riwayat Diagnosa</string>
 </resources>

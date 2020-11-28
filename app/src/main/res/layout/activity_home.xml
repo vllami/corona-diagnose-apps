@@ -91,6 +91,7 @@
         android:textAllCaps="false"
         android:textColor="#428CD4"
         android:textSize="17sp"
+        android:onClick="goToHistoryDiagnosa"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
