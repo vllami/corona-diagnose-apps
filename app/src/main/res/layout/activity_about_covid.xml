@@ -1,56 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0EFF2"
-    tools:context=".ui.aboutcovid.AboutCovidActivity">
+    android:orientation="horizontal"
+    android:padding="@dimen/_16sdp"
+    tools:context=".ui.aboutcovid.AboutTeamActivity">
 
-    <RadioGroup
-        android:id="@+id/daily_weekly_button_view"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <RadioButton
-            android:id="@+id/radio0"
-            android:layout_width="80dp"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/radio_no_selected">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/fotoDev"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/foto_zain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:gravity="center"
-            android:paddingLeft="16dp"
-            android:paddingTop="3dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="3dp"
-            android:text="Daily"
-            android:textColor="#B71C1C" />
+            android:layout_marginStart="@dimen/_8sdp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/fotoDev"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/tvNamaDev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nur Zain Pradana"
+                android:fontFamily="@font/nunito_black"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D3 - Manajemen Informatika"
+                android:fontFamily="@font/nunito_light"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_8sdp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="STMIK Bani Saleh"
+                android:fontFamily="@font/nunito_light"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_8sdp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Github : nurzainpradana"
+                android:fontFamily="@font/nunito_light"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_8sdp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LinkedIn : Nur Zain Pradana"
+                android:fontFamily="@font/nunito_light"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_8sdp"/>
+        </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:gravity="center"
-            android:paddingLeft="16dp"
-            android:paddingTop="3dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="3dp"
-            android:text="Weekly"
-            android:textColor="#B71C1C" />
 
-    </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
