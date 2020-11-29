@@ -129,28 +129,41 @@ public class StartDiagnoseActivity extends AppCompatActivity {
             } else {
                 result = jawabanYa * 10;
                 selesai = true;
+
                 Intent selesai = new Intent(getApplicationContext(), ResultActivity.class);
                 selesai.putExtra(JAWABAN_KEY, stringYa);
                 selesai.putExtra(JAWABAN_KEY, jawabanYa);
                 selesai.putExtra(RESULT_KEY, result);
                 startActivity(selesai);
 
-                simpanDataDiagnosa();
+                simpanDataDiagnosa(jawabanYa, result);
             }
         } else {
             Toast.makeText(this, "Anda belum memilih", Toast.LENGTH_LONG).show();
         }
     }
 
+<<<<<<< HEAD
     private void simpanDataDiagnosa() {
         @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("dd MMM yyyy - HH:mm:ss");
+=======
+    private void simpanDataDiagnosa(int jawabanYaFinal, int resultFinal) {
+        @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+>>>>>>> c45e82ad47ae32d4e094773a07aa8c7c4679b3c6
         String dateTime = df.format(Calendar.getInstance().getTime());
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.execSQL("insert into diagnosa(tanggal_diagnosa, jawabanYa, result) values('" +
                 dateTime + "','" +
+<<<<<<< HEAD
                 jawabanYa + "','" +
                 result + "')");
+=======
+                jawabanYaFinal + "','" +
+                resultFinal + "')");
+        Toast.makeText(getApplicationContext(), "Berhasil",
+                Toast.LENGTH_LONG).show();
+>>>>>>> c45e82ad47ae32d4e094773a07aa8c7c4679b3c6
         finish();
     }
 
