@@ -32,7 +32,7 @@
                 android:id="@+id/lv_diagnosa"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-            android:layout_margin="@dimen/_16sdp"
+                android:layout_margin="@dimen/_16sdp"
                 android:background="@drawable/radius_primary_button"
                 app:layout_constraintBottom_toTopOf="@+id/btn_beranda"
                 app:layout_constraintEnd_toEndOf="parent"

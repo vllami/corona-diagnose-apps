@@ -130,27 +130,28 @@ public class StartDiagnoseActivity extends AppCompatActivity {
             } else {
                 result = jawabanYa * 10;
                 selesai = true;
+
                 Intent selesai = new Intent(getApplicationContext(), ResultActivity.class);
                 selesai.putExtra(JAWABAN_KEY, jawabanYa);
                 selesai.putExtra(RESULT_KEY, result);
                 startActivity(selesai);
 
-                simpanDataDiagnosa();
+                simpanDataDiagnosa(jawabanYa, result);
             }
         } else {
             Toast.makeText(this, "Anda belum memilih", Toast.LENGTH_LONG).show();
         }
     }
 
-    private void simpanDataDiagnosa() {
+    private void simpanDataDiagnosa(int jawabanYaFinal, int resultFinal) {
         @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateTime = df.format(Calendar.getInstance().getTime());
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.execSQL("insert into diagnosa(tanggal_diagnosa, jawabanYa, result) values('" +
                 dateTime + "','" +
-                jawabanYa + "','" +
-                result + "')");
+                jawabanYaFinal + "','" +
+                resultFinal + "')");
         Toast.makeText(getApplicationContext(), "Berhasil",
                 Toast.LENGTH_LONG).show();
         finish();

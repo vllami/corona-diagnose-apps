@@ -138,7 +138,6 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/nunito"
-            android:paddingBottom="120dp"
             android:text="@string/result_saran_kami"
             android:textColor="#4B4B53"
             android:textSize="18sp"
@@ -146,8 +145,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header_saran_kami"
             tools:ignore="MissingConstraints" />
-
-
     </RelativeLayout>
 
     <Button
@@ -166,6 +163,7 @@
         android:textAllCaps="false"
         android:textColor="#DDEFF8"
         android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/header_saran_kami"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
