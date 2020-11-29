@@ -165,7 +165,7 @@ public class StartDiagnoseActivity extends AppCompatActivity {
             // Pada onBackPressed method
             dialog = new Dialog(StartDiagnoseActivity.this);
             dialog.setContentView(R.layout.alert_dialog);
-            dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.radius));
+            dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.radius_background));
             // ViewGroup pertama adalah Width, kedua adalah Height
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             dialog.setCancelable(false);
@@ -177,15 +177,6 @@ public class StartDiagnoseActivity extends AppCompatActivity {
 
             btnTidak.setOnClickListener(v -> dialog.dismiss());
             btnYa.setOnClickListener(v -> finish());
-
-//            new AlertDialog.Builder(new ContextThemeWrapper(StartDiagnoseActivity.this, R.style.CustomAlertDialog))
-//                    .setIcon(R.drawable.ic_alert)
-//                    .setTitle("Diagnosa sedang berlangsung")
-//                    .setMessage("Anda yakin ingin keluar?")
-//                    .setPositiveButton("Ya", (dialog, which) -> finish())
-//                    .setNegativeButton("Tidak", (dialog, which) -> {
-//                    })
-//                    .show();
         }
     }
 }

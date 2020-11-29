@@ -10,151 +10,283 @@
             type="id.uinic.diagnosacovid.model.DataCovid" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F0EFF2"
-        android:padding="24dp"
+        android:background="#FFFFFF"
+        android:fitsSystemWindows="true"
         tools:context=".ui.datacovid.DataCovidActivity">
 
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:ignore="MissingConstraints">
+            android:layout_height="300dp"
+            android:background="@color/colorBlue"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/colorBlue"
+                app:expandedTitleMarginBottom="20dp"
+                app:expandedTitleMarginStart="20dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                app:title="@string/data_covid_header">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/header"
+                    app:layout_collapseMode="parallax"
+                    tools:ignore="ContentDescription" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/title_background" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 tools:ignore="MissingConstraints">
 
                 <LinearLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="33dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/data_covid_tanggal"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="33dp"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:gravity="right"
+                        android:text="@string/data_covid_indonesia"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="16sp"
+                        tools:ignore="RtlHardcoded" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorDarkGray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/radio_selected"
-                    android:orientation="vertical"
-                    android:padding="@dimen/dimen_16"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/data_covid_positif"
-                        android:textColor="@color/black" />
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_weight="2.1"
+                        android:background="@drawable/radius_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UselessParent">
 
-                    <TextView
-                        android:id="@+id/tv_data_positif"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@{dataCovid.positif}"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        tools:text="Jumlah Positif" />
+                        <TextView
+                            android:id="@+id/tv_data_positif"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:gravity="center"
+                            android:text="@{dataCovid.positif}"
+                            android:textColor="@color/colorBlue"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            tools:text="Jumlah" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/nunito"
+                            android:text="@string/data_covid_positif"
+                            android:textColor="@color/colorDarkGray" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linearLayout2"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/radius_primary_button"
-                    android:orientation="vertical"
-                    android:padding="@dimen/dimen_16"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/data_covid_sembuh"
-                        android:textColor="@color/black" />
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radius_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-                    <TextView
-                        android:id="@+id/tv_data_sembuh"
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/tv_data_dirawat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:gravity="center"
+                            android:text="@{dataCovid.dirawat}"
+                            android:textColor="@color/colorOrange"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            tools:text="Jumlah" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/nunito"
+                            android:text="@string/data_covid_dirawat"
+                            android:textColor="@color/colorDarkGray" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@{dataCovid.sembuh}"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        tools:text="Jumlah Sembuh" />
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radius_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                        <TextView
+                            android:id="@+id/tv_data_sembuh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:gravity="center"
+                            android:text="@{dataCovid.sembuh}"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            tools:text="Jumlah" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/nunito"
+                            android:text="@string/data_covid_sembuh"
+                            android:textColor="@color/colorDarkGray" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radius_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                        <TextView
+                            android:id="@+id/tv_data_meninggal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:gravity="center"
+                            android:text="@{dataCovid.meninggal}"
+                            android:textColor="@color/colorRed"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            tools:text="Jumlah" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/nunito"
+                            android:text="@string/data_covid_meninggal"
+                            android:textColor="@color/colorDarkGray" />
+                    </LinearLayout>
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorDarkGray" />
             </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                tools:ignore="MissingConstraints">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/radius_secondary_button"
-                    android:orientation="vertical"
-                    android:padding="@dimen/dimen_16"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/data_covid_meninggal"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/tv_data_meninggal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@{dataCovid.meninggal}"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        tools:text="Jumlah Meninggal" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/radius_primary_button"
-                    android:orientation="vertical"
-                    android:padding="@dimen/dimen_16"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/data_covid_dirawat"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/tv_data_dirawat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@{dataCovid.dirawat}"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        tools:text="Jumlah Dirawat" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

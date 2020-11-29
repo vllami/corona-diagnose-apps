@@ -11,10 +11,10 @@
     <string name="home_btn_mulai_diagnosa">Mulai Diagnosa</string>
     <string name="home_btn_hasil_sebelumnya">Lihat Hasil Sebelumnya</string>
     <string name="home_informasi_lain">Informasi Lain</string>
-    <string name="home_data_covid_indonesia">Data COVID-19 di Indonesia</string>
-    <string name="home_sub_dci">Informasi tentang data terbaru yang terjadi di Indonesia.</string>
     <string name="home_tentang_covid">Tentang COVID-19</string>
-    <string name="home_sub_tc">Informasi tentang seperti apa virusnya dan cara mencegahnya.</string>
+    <string name="home_sub_tc">Update terbaru perkembangan di Indonesia dan cara mencegahnya.</string>
+    <string name="home_profil_developer">Profil Developer</string>
+    <string name="home_sub_pd">Informasi tentang Developer yang mengembangkan aplikasi ini.</string>
 
     <string name="start_diagnose_header">Pertanyaan Diagnosa</string>
     <string name="start_diagnose_sub_header">Silahkan Anda pilih YA atau TIDAK sesuai dengan gejala yang Anda alami sekarang.</string>
@@ -33,14 +33,17 @@
     <string name="result_keterangan">(Keterangan)</string>
     <string name="result_header_saran_kami">Saran Kami</string>
     <string name="result_saran_kami">(Saran Kami)</string>
-    <string name="alert_back_when_diagnosa">Anda Sedang Melakukan Diagnosa, yakin ingin keluar ?</string>
+
+    <string name="previous_result_header">Hasil Diagnosa Sebelumnya</string>
+
     <string name="data_covid_sumber_data">Sumber Data : http://api.kawalcorona.com/indonesia</string>
-    <string name="previous_result_header">Riwayat Diagnosa</string>
-    <string name="batal_text">Batal</string>
-    <string name="ya">Ya</string>
     <string name="lihat_hasil_text">Lihat Hasil</string>
 
-    <string name="data_covid_positif">Positif</string>
+    <string name="data_covid_header">Tentang COVID-19</string>
+    <string name="data_covid_tanggal">Tanggal</string>
+    <string name="data_covid_indonesia">Data Indonesia</string>
+    <string name="data_covid_bulan">Bulan</string>
+    <string name="data_covid_positif">Total Terkonfirmasi</string>
     <string name="data_covid_dirawat">Dirawat</string>
     <string name="data_covid_sembuh">Sembuh</string>
     <string name="data_covid_meninggal">Meninggal</string>

@@ -1,4 +1,4 @@
-package id.uinic.diagnosacovid.ui.aboutcovid;
+package id.uinic.diagnosacovid.ui.developerprofile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import id.uinic.diagnosacovid.R;
 
-public class AboutCovidActivity extends AppCompatActivity {
+public class DeveloperProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_covid);
+        setContentView(R.layout.activity_developer_profile);
     }
 }
