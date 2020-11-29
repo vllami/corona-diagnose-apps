@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import id.uinic.diagnosacovid.R;
 import id.uinic.diagnosacovid.ui.datacovid.DataCovidActivity;
+import id.uinic.diagnosacovid.ui.developerprofile.AboutTeamActivity;
 import id.uinic.diagnosacovid.ui.previousresult.PreviousResultActivity;
 import id.uinic.diagnosacovid.ui.startdiagnose.StartDiagnoseActivity;
 
@@ -50,6 +51,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void btnHasilSebelumnya(View view) {
         Intent i = new Intent(HomeActivity.this, PreviousResultActivity.class);
+        startActivity(i);
+    }
+
+    public void btnProfileDev(View view) {
+        Intent i = new Intent(HomeActivity.this, AboutTeamActivity.class);
         startActivity(i);
     }
 }

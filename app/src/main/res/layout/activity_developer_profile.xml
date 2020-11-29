@@ -16,8 +16,8 @@
         android:background="@drawable/radio_no_selected">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/fotoDev"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
             android:src="@drawable/foto_zain"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,8 +76,8 @@
         android:layout_marginTop="@dimen/_16sdp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/fotoDev2"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
             android:src="@drawable/foto_vllami"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
