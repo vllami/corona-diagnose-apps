@@ -29,7 +29,6 @@ import static id.uinic.diagnosacovid.util.Const.RESULT_KEY;
 
 public class StartDiagnoseActivity extends AppCompatActivity {
 
-    protected Cursor cursor;
     DatabaseHelper dbHelper;
     Dialog dialog;
     Button btnSelanjutnya;
@@ -70,7 +69,7 @@ public class StartDiagnoseActivity extends AppCompatActivity {
     };
 
     // Jawaban Ya
-    String[] jawaban_ya = new String[]{
+    String[] stringYa = new String[]{
             "Ya",
             "Ya",
             "Ya",
@@ -115,7 +114,7 @@ public class StartDiagnoseActivity extends AppCompatActivity {
             RadioButton jawaban_user = findViewById(rgPilihan.getCheckedRadioButtonId());
             String ambil_jawaban_user = jawaban_user.getText().toString();
             rgPilihan.check(0);
-            if (ambil_jawaban_user.equalsIgnoreCase(jawaban_ya[nomor])) jawabanYa++;
+            if (ambil_jawaban_user.equalsIgnoreCase(stringYa[nomor])) jawabanYa++;
             else jawabanTidak++;
             nomor++;
             if (nomor < pertanyaan_diagnosa.length) {
@@ -131,7 +130,7 @@ public class StartDiagnoseActivity extends AppCompatActivity {
                 result = jawabanYa * 10;
                 selesai = true;
                 Intent selesai = new Intent(getApplicationContext(), ResultActivity.class);
-                selesai.putExtra(JAWABAN_KEY, jawaban_ya);
+                selesai.putExtra(JAWABAN_KEY, stringYa);
                 selesai.putExtra(RESULT_KEY, result);
                 startActivity(selesai);
 
@@ -151,8 +150,6 @@ public class StartDiagnoseActivity extends AppCompatActivity {
                 dateTime + "','" +
                 jawabanYa + "','" +
                 result + "')");
-        Toast.makeText(getApplicationContext(), "Berhasil",
-                Toast.LENGTH_LONG).show();
         finish();
     }
 
