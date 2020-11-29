@@ -12,50 +12,43 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import id.uinic.diagnosacovid.R;
-import id.uinic.diagnosacovid.ui.dataterbaru.DataCovidActivity;
+import id.uinic.diagnosacovid.ui.datacovid.DataCovidActivity;
 import id.uinic.diagnosacovid.ui.previousresult.PreviousResultActivity;
-import id.uinic.diagnosacovid.ui.quisioner.MainActivity;
+import id.uinic.diagnosacovid.ui.startdiagnose.StartDiagnoseActivity;
 
 public class HomeActivity extends AppCompatActivity {
-
-    Animation animLeft, animRight;
-    TextView tv_header, tv_penjelasan;
-    ImageView img_dokter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button btnMulaiDiagnosa = findViewById(R.id.btn_mulai_diagnosa);
-        btnMulaiDiagnosa.setOnClickListener(v -> {
-            Intent i = new Intent(HomeActivity.this, MainActivity.class);
-            startActivity(i);
-        });
+        // Call ID
+        TextView tvHeader = findViewById(R.id.tv_header);
+        TextView tvPenjelasan = findViewById(R.id.tv_penjelasan);
+        ImageView imgDokter = findViewById(R.id.img_dokter);
 
         // Animation
-        animLeft = AnimationUtils.loadAnimation(this, R.anim.anim_left);
-        animRight = AnimationUtils.loadAnimation(this, R.anim.anim_right);
+        Animation animLeft = AnimationUtils.loadAnimation(this, R.anim.anim_left);
+        Animation animRight = AnimationUtils.loadAnimation(this, R.anim.anim_right);
 
-        // Call
-        tv_header = findViewById(R.id.header);
-        tv_penjelasan = findViewById(R.id.penjelasan);
-        img_dokter = findViewById(R.id.dokter);
-
-        tv_header.setAnimation(animLeft);
-        tv_penjelasan.setAnimation(animLeft);
-        img_dokter.setAnimation(animRight);
+        // Set Animation
+        tvHeader.setAnimation(animLeft);
+        tvPenjelasan.setAnimation(animLeft);
+        imgDokter.setAnimation(animRight);
     }
 
     public void btnMulaiDiagnosa(View view) {
+        Intent i = new Intent(HomeActivity.this, StartDiagnoseActivity.class);
+        startActivity(i);
     }
 
-    public void goToDataCovid(View view) {
+    public void btnDataCovid(View view) {
         Intent i = new Intent(HomeActivity.this, DataCovidActivity.class);
         startActivity(i);
     }
 
-    public void goToHistoryDiagnosa(View view) {
+    public void btnHasilSebelumnya(View view) {
         Intent i = new Intent(HomeActivity.this, PreviousResultActivity.class);
         startActivity(i);
     }

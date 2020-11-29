@@ -1,11 +1,10 @@
-package id.uinic.diagnosacovid.ui.dataterbaru;
+package id.uinic.diagnosacovid.ui.datacovid;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;

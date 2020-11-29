@@ -1,4 +1,4 @@
-package id.uinic.diagnosacovid.ui.about;
+package id.uinic.diagnosacovid.ui.aboutcovid;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:background="#F0EFF2"
         android:padding="24dp"
-        tools:context=".ui.dataterbaru.DataCovidActivity">
+        tools:context=".ui.datacovid.DataCovidActivity">
 
         <LinearLayout
             android:id="@+id/linearLayout"

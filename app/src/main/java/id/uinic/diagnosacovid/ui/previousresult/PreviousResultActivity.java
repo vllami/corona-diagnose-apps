@@ -1,10 +1,8 @@
 package id.uinic.diagnosacovid.ui.previousresult;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import id.uinic.diagnosacovid.R;
 import id.uinic.diagnosacovid.database.DatabaseHelper;
@@ -53,7 +50,7 @@ public class PreviousResultActivity extends AppCompatActivity {
             resultDiagnosa[cc] = cursor.getString(3);
         }
 
-        bind.lvDiagnosa.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftarDiagnosa));
+        bind.lvDiagnosa.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, daftarDiagnosa));
         bind.lvDiagnosa.setSelected(true);
         bind.lvDiagnosa.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

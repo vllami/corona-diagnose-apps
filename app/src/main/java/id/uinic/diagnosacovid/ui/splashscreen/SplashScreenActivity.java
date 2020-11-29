@@ -24,14 +24,15 @@ public class SplashScreenActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
 
-        // Animation
-        Animation animFade = AnimationUtils.loadAnimation(this, R.anim.anim_fade);
-        Animation animBottom = AnimationUtils.loadAnimation(this, R.anim.anim_bottom);
-
         // Call ID
         ImageView imgSplashScreen = findViewById(R.id.img_splash_screen);
         TextView tvCopyright = findViewById(R.id.tv_copyright);
 
+        // Animation
+        Animation animFade = AnimationUtils.loadAnimation(this, R.anim.anim_fade);
+        Animation animBottom = AnimationUtils.loadAnimation(this, R.anim.anim_bottom);
+
+        // Set Animation
         imgSplashScreen.setAnimation(animFade);
         tvCopyright.setAnimation(animBottom);
 

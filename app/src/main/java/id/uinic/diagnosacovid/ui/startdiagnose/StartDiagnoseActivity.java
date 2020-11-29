@@ -1,9 +1,10 @@
-package id.uinic.diagnosacovid.ui.quisioner;
+package id.uinic.diagnosacovid.ui.startdiagnose;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,6 +12,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -21,25 +24,25 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import id.uinic.diagnosacovid.R;
+import id.uinic.diagnosacovid.ui.home.HomeActivity;
 import id.uinic.diagnosacovid.ui.result.ResultActivity;
 import id.uinic.diagnosacovid.database.DatabaseHelper;
 
 import static id.uinic.diagnosacovid.util.Const.JAWABAN_KEY;
 import static id.uinic.diagnosacovid.util.Const.RESULT_KEY;
 
-public class MainActivity extends AppCompatActivity {
+public class StartDiagnoseActivity extends AppCompatActivity {
 
     protected Cursor cursor;
     DatabaseHelper dbHelper;
+    Dialog dialog;
 
-    TextView pertanyaan;
-    RadioGroup radio;
-    RadioButton ya, tidak;
+    TextView tvPertanyaan;
+    RadioGroup rgPilihan;
+    RadioButton rbYa, rbTidak;
     int nomor = 0;
     Boolean selesai;
     public static int result, jawabanYa, jawabanTidak;
-
-
 
     // Pertanyaan
     String[] pertanyaan_diagnosa = new String[]{
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             "gejala diare?",
             "konjungtivitis atau mata merah?",
             "sakit kepala?",
-            "hilangnya indera penciuman atau perasa?",
+            "indera penciuman atau perasa menghilang?",
             "sesak napas?",
             "rasa tertekan pada dada?",
             "kesulitan berbicara atau bergerak?"
@@ -86,39 +89,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_start_diagnose);
 
-        pertanyaan = findViewById(R.id.pertanyaan);
-        radio = findViewById(R.id.pilihan);
-        ya = findViewById(R.id.ya);
-        tidak = findViewById(R.id.tidak);
+        // Call ID
+        tvPertanyaan = findViewById(R.id.tv_pertanyaan);
+        rgPilihan = findViewById(R.id.rg_pilihan);
+        rbYa = findViewById(R.id.rb_ya);
+        rbTidak = findViewById(R.id.rb_tidak);
 
-        pertanyaan.setText(pertanyaan_diagnosa[nomor]);
-        ya.setText(jawaban[0]);
-        tidak.setText(jawaban[1]);
+        tvPertanyaan.setText(pertanyaan_diagnosa[nomor]);
+        rbYa.setText(jawaban[0]);
+        rbTidak.setText(jawaban[1]);
 
         dbHelper = new DatabaseHelper(this);
 
         selesai = false;
 
-        radio.check(0);
+        rgPilihan.check(0);
         jawabanYa = 0;
         jawabanTidak = 0;
     }
 
     public void btnPertanyaanSelanjutnya(View view) {
-        if (ya.isChecked() || tidak.isChecked()) {
+        if (rbYa.isChecked() || rbTidak.isChecked()) {
 
-            RadioButton jawaban_user = findViewById(radio.getCheckedRadioButtonId());
+            RadioButton jawaban_user = findViewById(rgPilihan.getCheckedRadioButtonId());
             String ambil_jawaban_user = jawaban_user.getText().toString();
-            radio.check(0);
+            rgPilihan.check(0);
             if (ambil_jawaban_user.equalsIgnoreCase(jawaban_ya[nomor])) jawabanYa++;
             else jawabanTidak++;
             nomor++;
             if (nomor < pertanyaan_diagnosa.length) {
-                pertanyaan.setText(pertanyaan_diagnosa[nomor]);
-                ya.setText(jawaban[(nomor * 2)]);
-                tidak.setText(jawaban[(nomor * 2) + 1]);
+                tvPertanyaan.setText(pertanyaan_diagnosa[nomor]);
+                rbYa.setText(jawaban[(nomor * 2)]);
+                rbTidak.setText(jawaban[(nomor * 2) + 1]);
 
             } else {
                 result = jawabanYa * 10;
@@ -144,33 +148,42 @@ public class MainActivity extends AppCompatActivity {
                 dateTime + "','" +
                 jawabanYa + "','" +
                 result + "')");
-        Toast.makeText(getApplicationContext(), "Berhasil" ,
+        Toast.makeText(getApplicationContext(), "Berhasil",
                 Toast.LENGTH_LONG).show();
         finish();
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBackPressed() {
-        if (selesai){
+        dialog.show();
+
+        if (selesai) {
             super.onBackPressed();
         } else {
-            new AlertDialog.Builder(new ContextThemeWrapper(MainActivity.this, R.style.CustomAlertDialog))
-                    .setIcon(R.drawable.ic_alert)
-                    .setTitle("Pertanyaan Belum Selesai")
-                    .setMessage("Yakin ingin keluar ?")
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
+            // Pada onBackPressed method
+            dialog = new Dialog(StartDiagnoseActivity.this);
+            dialog.setContentView(R.layout.alert_dialog);
+            dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.radius));
+            // ViewGroup pertama adalah Width, kedua adalah Height
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog.setCancelable(false);
+            dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
-                        }
-                    })
-                    .show();
+            Button btnTidak = dialog.findViewById(R.id.btn_tidak);
+            Button btnYa = dialog.findViewById(R.id.btn_ya);
+
+            btnTidak.setOnClickListener(v -> dialog.dismiss());
+            btnYa.setOnClickListener(v -> finish());
+
+//            new AlertDialog.Builder(new ContextThemeWrapper(StartDiagnoseActivity.this, R.style.CustomAlertDialog))
+//                    .setIcon(R.drawable.ic_alert)
+//                    .setTitle("Diagnosa sedang berlangsung")
+//                    .setMessage("Anda yakin ingin keluar?")
+//                    .setPositiveButton("Ya", (dialog, which) -> finish())
+//                    .setNegativeButton("Tidak", (dialog, which) -> {
+//                    })
+//                    .show();
         }
     }
 }

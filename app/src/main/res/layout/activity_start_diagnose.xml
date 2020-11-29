@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0EFF2"
-    tools:context=".ui.quisioner.MainActivity">
+    tools:context=".ui.startdiagnose.StartDiagnoseActivity">
 
     <TextView
-        android:id="@+id/header"
+        android:id="@+id/tv_header"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="23dp"
         android:fontFamily="@font/nunito_black"
         android:lineHeight="34dp"
-        android:text="@string/main_header"
+        android:text="@string/start_diagnose_header"
         android:textColor="#4B4B53"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,33 +23,33 @@
         tools:ignore="MissingConstraints,RtlSymmetry,UnusedAttribute" />
 
     <TextView
-        android:id="@+id/sub_header"
+        android:id="@+id/sub_tv_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/nunito"
         android:lineHeight="27dp"
-        android:text="@string/main_sub_header"
+        android:text="@string/start_diagnose_sub_header"
         android:textColor="#4B4B53"
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_selanjutnya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header"
         app:layout_constraintVertical_bias="0.01999998"
         tools:ignore="MissingConstraints,RtlSymmetry,UnusedAttribute" />
 
     <ImageView
-        android:id="@+id/dokter"
-        android:layout_width="139dp"
-        android:layout_height="217dp"
+        android:id="@+id/img_dokter"
+        android:layout_width="@dimen/_102sdp"
+        android:layout_height="@dimen/_162sdp"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="19dp"
         android:background="@drawable/img_doctor"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_selanjutnya"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sub_tv_header"
         app:layout_constraintVertical_bias="0.469"
         tools:ignore="ContentDescription" />
 
@@ -58,20 +58,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="178dp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_selanjutnya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/dokter"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_dokter"
+        app:layout_constraintTop_toTopOf="@+id/sub_tv_header"
         app:layout_constraintVertical_bias="0.469"
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/apakah_anda"
+            android:id="@+id/tv_apakah_anda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito"
-            android:text="@string/main_apakah_anda"
+            android:text="@string/start_diagnose_apakah_anda"
             android:textColor="#4B4B53"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,47 +79,47 @@
             tools:ignore="MissingConstraints,RtlSymmetry,UnusedAttribute" />
 
         <TextView
-            android:id="@+id/pertanyaan"
+            android:id="@+id/tv_pertanyaan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_extrabold"
-            android:text="@string/main_pertanyaan"
+            android:text="@string/start_diagnose_pertanyaan"
             android:textColor="#4B4B53"
             android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/apakah_anda"
+            app:layout_constraintTop_toBottomOf="@+id/tv_apakah_anda"
             tools:ignore="MissingConstraints,RtlSymmetry,UnusedAttribute" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="107dp"
+            android:layout_marginTop="105dp"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp">
 
             <RadioGroup
-                android:id="@+id/pilihan"
+                android:id="@+id/rg_pilihan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="MissingConstraints">
 
                 <RadioButton
-                    android:id="@+id/ya"
+                    android:id="@+id/rb_ya"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/radio_selector"
                     android:button="@android:color/transparent"
                     android:fontFamily="@font/nunito_extrabold"
                     android:gravity="center"
-                    android:text="@string/main_ya"
+                    android:text="@string/optional_ya"
                     android:textColor="@drawable/radio_text_selector"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="RtlSymmetry" />
 
                 <RadioButton
-                    android:id="@+id/tidak"
+                    android:id="@+id/rb_tidak"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
@@ -127,7 +127,7 @@
                     android:button="@android:color/transparent"
                     android:fontFamily="@font/nunito_extrabold"
                     android:gravity="center"
-                    android:text="@string/main_tidak"
+                    android:text="@string/optional_tidak"
                     android:textColor="@drawable/radio_text_selector"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -144,11 +144,11 @@
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginBottom="33dp"
         android:background="@drawable/radius_primary_button"
         android:fontFamily="@font/nunito_extrabold"
         android:onClick="btnPertanyaanSelanjutnya"
-        android:text="@string/main_next"
+        android:text="@string/start_diagnose_next"
         android:textAllCaps="false"
         android:textColor="#DDEFF8"
         android:textSize="17sp"

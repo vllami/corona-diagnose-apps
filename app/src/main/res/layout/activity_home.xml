@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/btn_data_covid"
-    android:onClick="goToDataCovid"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,13 +8,14 @@
     tools:context=".ui.home.HomeActivity">
 
     <TextView
-        android:id="@+id/header"
-        android:layout_width="270dp"
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_18sdp"
         android:fontFamily="@font/nunito_black"
         android:lineHeight="@dimen/_27sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_25sdp"
         android:text="@string/home_header"
         android:textColor="#4B4B53"
         android:textSize="@dimen/_21ssp"
@@ -26,33 +24,35 @@
         tools:ignore="MissingConstraints,RtlSymmetry,UnusedAttribute" />
 
     <TextView
-        android:id="@+id/penjelasan"
-        android:layout_width="207dp"
+        android:id="@+id/tv_penjelasan"
+        android:layout_width="@dimen/_160sdp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/nunito"
+        android:lineHeight="@dimen/_19sdp"
         android:text="@string/home_sub_header"
         android:textColor="#4B4B53"
-        android:textSize="@dimen/_14ssp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="@dimen/_16sdp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_mulai_diagnosa"
-        app:layout_constraintEnd_toStartOf="@+id/dokter"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_mulai_diagnosa"
+        app:layout_constraintEnd_toStartOf="@+id/img_dokter"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
+        app:layout_constraintTop_toTopOf="@+id/tv_header"
+        app:layout_constraintVertical_bias="0.54"
+        tools:ignore="UnusedAttribute" />
 
     <ImageView
-        android:id="@+id/dokter"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_150sdp"
+        android:id="@+id/img_dokter"
+        android:layout_width="@dimen/_102sdp"
+        android:layout_height="@dimen/_162sdp"
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/_16sdp"
+        android:layout_marginEnd="19dp"
         android:background="@drawable/img_doctor"
-        app:layout_constraintBottom_toTopOf="@+id/btn_mulai_diagnosa"
-        app:layout_constraintStart_toEndOf="@id/penjelasan"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_mulai_diagnosa"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.411"
+        app:layout_constraintTop_toTopOf="@+id/tv_header"
+        app:layout_constraintVertical_bias="0.547"
         tools:ignore="ContentDescription" />
 
     <Button
@@ -62,6 +62,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/radius_primary_button"
@@ -87,19 +88,19 @@
         android:layout_marginBottom="29dp"
         android:background="@drawable/radius_secondary_button"
         android:fontFamily="@font/nunito_extrabold"
+        android:onClick="btnHasilSebelumnya"
         android:text="@string/home_btn_hasil_sebelumnya"
         android:textAllCaps="false"
         android:textColor="#428CD4"
         android:textSize="17sp"
-        android:onClick="goToHistoryDiagnosa"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/layout_informasi_lain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,OnClick" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/layout_informasi_lain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFF"
@@ -123,16 +124,17 @@
             tools:layout_editor_absoluteX="19dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/btn_data_covid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:onClick="btnDataCovid"
             app:layout_constraintTop_toBottomOf="@+id/informasi_lain"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp">
 
             <ImageView
-                android:id="@+id/image_data_covid"
+                android:id="@+id/img_data_covid"
                 android:layout_width="46dp"
                 android:layout_height="46dp"
                 android:layout_marginStart="20dp"
@@ -153,7 +155,7 @@
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.985"
-                app:layout_constraintStart_toEndOf="@+id/image_data_covid"
+                app:layout_constraintStart_toEndOf="@+id/img_data_covid"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -170,7 +172,7 @@
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/image_data_covid"
+                app:layout_constraintStart_toEndOf="@+id/img_data_covid"
                 app:layout_constraintTop_toBottomOf="@+id/data_covid"
                 tools:ignore="MissingConstraints,RtlSymmetry" />
 
@@ -193,12 +195,12 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="33dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@+id/btn_data_covid"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp">
 
             <ImageView
-                android:id="@+id/image_tentang_covid"
+                android:id="@+id/img_tentang_covid"
                 android:layout_width="46dp"
                 android:layout_height="46dp"
                 android:layout_marginStart="20dp"
@@ -219,7 +221,7 @@
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.985"
-                app:layout_constraintStart_toEndOf="@+id/image_tentang_covid"
+                app:layout_constraintStart_toEndOf="@+id/img_tentang_covid"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -236,7 +238,7 @@
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/image_tentang_covid"
+                app:layout_constraintStart_toEndOf="@+id/img_tentang_covid"
                 app:layout_constraintTop_toBottomOf="@+id/tentangCovid"
                 tools:ignore="MissingConstraints,RtlSymmetry" />
 

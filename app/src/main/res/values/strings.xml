@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">Diagnosa COVID-19</string>
+    <string name="app_name">DD COVID-19</string>
 
     <string name="splash_screen_copyright">Copyright © 2020 | Vizain Dev</string>
 
-    <string name="home_header">Halo, selamat pagi Sehat selalu yaa..</string>
-    <string name="home_sub_header">Aplikasi ini membantu Anda mengetahui status COVID-19 pada diri Anda. Untuk itu, mari kita semua saling menjaga kesehatan satu sama lain, agar kita semua terbebas dari virus dan penyakit menular.</string>
+    <string name="optional_ya">Ya</string>
+    <string name="optional_tidak">Tidak</string>
+
+    <string name="home_header">Diagnosa Digital COVID-19</string>
+    <string name="home_sub_header">Ayo kita terapkan protokol kesehatan kapanpun dan dimanapun berada, agar kita semua terhindar dari virus serta penyakit menular.</string>
     <string name="home_btn_mulai_diagnosa">Mulai Diagnosa</string>
     <string name="home_btn_hasil_sebelumnya">Lihat Hasil Sebelumnya</string>
     <string name="home_informasi_lain">Informasi Lain</string>
@@ -13,14 +16,14 @@
     <string name="home_tentang_covid">Tentang COVID-19</string>
     <string name="home_sub_tc">Informasi tentang seperti apa virusnya dan cara mencegahnya.</string>
 
-    <string name="main_header">Pertanyaan Diagnosa</string>
-    <string name="main_sub_header">Silahkan Anda pilih YA atau TIDAK sesuai dengan gejala yang Anda alami sekarang.</string>
-    <string name="main_apakah_anda">Apakah Anda mengalami</string>
-    <string name="main_pertanyaan">(Pertanyaan)</string>
-    <string name="main_ya">Ya</string>
-    <string name="main_tidak">Tidak</string>
-    <string name="main_next">Pertanyaan Selanjutnya</string>
-    <string name="main_previous">Pertanyaan Sebelumnya</string>
+    <string name="start_diagnose_header">Pertanyaan Diagnosa</string>
+    <string name="start_diagnose_sub_header">Silahkan Anda pilih YA atau TIDAK sesuai dengan gejala yang Anda alami sekarang.</string>
+    <string name="start_diagnose_apakah_anda">Apakah Anda mengalami</string>
+    <string name="start_diagnose_pertanyaan">(Pertanyaan)</string>
+    <string name="start_diagnose_next">Pertanyaan Selanjutnya</string>
+    <string name="start_diagnose_previous">Pertanyaan Sebelumnya</string>
+    <string name="start_diagnose_alert_dialog_header">Diagnosa Sedang Berlangsung</string>
+    <string name="start_diagnose_alert_dialog_sub_header">Apakah Anda ingin keluar?</string>
 
     <string name="result_header">Hasil Diagnosa</string>
     <string name="result_sub_header">Dilihat dari hasil diagnosa secara keseluruhan, menunjukkan bahwa Anda</string>
@@ -30,15 +33,9 @@
     <string name="result_keterangan">(Keterangan)</string>
     <string name="result_header_saran_kami">Saran Kami</string>
     <string name="result_saran_kami">(Saran Kami)</string>
-    <string name="sumber_data_text">Sumber Data : http://api.kawalkorona.com/indonesia</string>
     <string name="alert_back_when_diagnosa">Anda Sedang Melakukan Diagnosa, yakin ingin keluar ?</string>
-    <string name="batal_text">Batal</string>
-    <string name="ya">Ya</string>
-<<<<<<< HEAD
-    <string name="data_covid_sumber_data">Sumber Data : http://api.kawalkorona.com/indonesia</string>
-    <string name="previous_result_header">Riwayat Diagnosa</string>
-=======
 
-    <string name="data_covid_sumber_data">Sumber Data : http://api.kawalkorona.com/indonesia</string>
->>>>>>> buatresponsifactivityhome
+    <string name="data_covid_sumber_data">Sumber Data : http://api.kawalcorona.com/indonesia</string>
+
+    <string name="previous_result_header">Riwayat Diagnosa</string>
 </resources>
