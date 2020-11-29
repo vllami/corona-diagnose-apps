@@ -131,7 +131,7 @@ public class StartDiagnoseActivity extends AppCompatActivity {
                 result = jawabanYa * 10;
                 selesai = true;
                 Intent selesai = new Intent(getApplicationContext(), ResultActivity.class);
-                selesai.putExtra(JAWABAN_KEY, jawaban_ya);
+                selesai.putExtra(JAWABAN_KEY, jawabanYa);
                 selesai.putExtra(RESULT_KEY, result);
                 startActivity(selesai);
 
