@@ -194,6 +194,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="33dp"
+            android:onClick="btnProfileDev"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_data_covid"
             tools:ignore="MissingConstraints"

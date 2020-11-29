@@ -47,4 +47,13 @@
     <string name="data_covid_dirawat">Dirawat</string>
     <string name="data_covid_sembuh">Sembuh</string>
     <string name="data_covid_meninggal">Meninggal</string>
+    <string name="villa_mukti_indiyanto">Villa Mukti Indiyanto</string>
+    <string name="s1_informatika">S1 - Informatika</string>
+    <string name="universitas_bhayangkara_jakarta">Universitas Bhayangkara Jakarta</string>
+    <string name="sosmed_vllami">Instagram : vllami</string>
+    <string name="nur_zain_pradana">Nur Zain Pradana</string>
+    <string name="d3_manajemen_informatika">D3 - Manajemen Informatika</string>
+    <string name="stmik_bani_saleh">STMIK Bani Saleh</string>
+    <string name="github_nurzainpradana">Github : nurzainpradana</string>
+    <string name="sosmed_nur_zain_pradana">LinkedIn : Nur Zain Pradana</string>
 </resources>
