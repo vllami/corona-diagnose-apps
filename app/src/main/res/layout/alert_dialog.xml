@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:padding="@dimen/_16sdp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="#FFFFFF">
 
@@ -13,11 +14,11 @@
         android:layout_marginTop="13dp"
         android:fontFamily="@font/nunito_extrabold"
         android:gravity="center"
-        android:paddingStart="60dp"
-        android:paddingEnd="60dp"
         android:text="@string/start_diagnose_alert_dialog_header"
         android:textColor="#4B4B53"
         android:textSize="@dimen/_18ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="MissingConstraints" />
 
@@ -25,7 +26,6 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="35dp"
         android:src="@drawable/ic_alert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,22 +42,21 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito"
         android:gravity="center"
-        android:paddingStart="50dp"
-        android:paddingEnd="50dp"
         android:text="@string/start_diagnose_alert_dialog_sub_header"
         android:textColor="#4B4B53"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-16dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 

@@ -37,7 +37,6 @@ public class StartDiagnoseActivity extends AppCompatActivity {
     TextView tvPertanyaan;
     RadioGroup rgPilihan;
     RadioButton rbYa, rbTidak;
-
     int nomor = 0;
     Boolean selesai;
     public static int result, jawabanYa, jawabanTidak;
@@ -94,6 +93,8 @@ public class StartDiagnoseActivity extends AppCompatActivity {
         rgPilihan = findViewById(R.id.rg_pilihan);
         rbYa = findViewById(R.id.rb_ya);
         rbTidak = findViewById(R.id.rb_tidak);
+
+        btnSelanjutnya = findViewById(R.id.btn_selanjutnya);
 
         tvPertanyaan.setText(pertanyaan_diagnosa[nomor]);
         rbYa.setText(jawaban[0]);
@@ -158,8 +159,6 @@ public class StartDiagnoseActivity extends AppCompatActivity {
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBackPressed() {
-        dialog.show();
-
         if (selesai) {
             super.onBackPressed();
         } else {
@@ -168,9 +167,10 @@ public class StartDiagnoseActivity extends AppCompatActivity {
             dialog.setContentView(R.layout.alert_dialog);
             dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.radius));
             // ViewGroup pertama adalah Width, kedua adalah Height
-            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             dialog.setCancelable(false);
             dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+            dialog.show();
 
             Button btnTidak = dialog.findViewById(R.id.btn_tidak);
             Button btnYa = dialog.findViewById(R.id.btn_ya);
