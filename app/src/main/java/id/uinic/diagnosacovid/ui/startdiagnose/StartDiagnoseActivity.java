@@ -142,7 +142,7 @@ public class StartDiagnoseActivity extends AppCompatActivity {
     }
 
     private void simpanDataDiagnosa() {
-        @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("dd MMM yyyy - HH:mm:ss");
         String dateTime = df.format(Calendar.getInstance().getTime());
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
