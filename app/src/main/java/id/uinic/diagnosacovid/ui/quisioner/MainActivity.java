@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     TextView pertanyaan;
     RadioGroup radio;
     RadioButton ya, tidak;
+    Button btnSelanjutnya;
     int nomor = 0;
     Boolean selesai;
     public static int result, jawabanYa, jawabanTidak;
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         radio = findViewById(R.id.pilihan);
         ya = findViewById(R.id.ya);
         tidak = findViewById(R.id.tidak);
+        btnSelanjutnya = findViewById(R.id.btn_selanjutnya);
 
         pertanyaan.setText(pertanyaan_diagnosa[nomor]);
         ya.setText(jawaban[0]);
@@ -119,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
                 pertanyaan.setText(pertanyaan_diagnosa[nomor]);
                 ya.setText(jawaban[(nomor * 2)]);
                 tidak.setText(jawaban[(nomor * 2) + 1]);
+
+                if (nomor < ( pertanyaan_diagnosa.length - 1)) {
+                    btnSelanjutnya.setText(R.string.lihat_hasil_text);
+                }
 
             } else {
                 result = jawabanYa * 10;
