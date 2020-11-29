@@ -39,4 +39,9 @@
     <string name="data_covid_sumber_data">Sumber Data : http://api.kawalcorona.com/indonesia</string>
     <string name="previous_result_header">Riwayat Diagnosa</string>
     <string name="lihat_hasil_text">Lihat Hasil</string>
+
+    <string name="data_covid_positif">Positif</string>
+    <string name="data_covid_dirawat">Dirawat</string>
+    <string name="data_covid_sembuh">Sembuh</string>
+    <string name="data_covid_meninggal">Meninggal</string>
 </resources>
