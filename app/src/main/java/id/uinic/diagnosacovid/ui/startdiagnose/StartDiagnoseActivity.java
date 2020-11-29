@@ -1,35 +1,28 @@
 package id.uinic.diagnosacovid.ui.startdiagnose;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
 import android.view.View;
-<<<<<<< HEAD:app/src/main/java/id/uinic/diagnosacovid/ui/startdiagnose/StartDiagnoseActivity.java
 import android.view.ViewGroup;
-=======
->>>>>>> 1b55b2fa2bc79c939dccc6430f370c6dad783974:app/src/main/java/id/uinic/diagnosacovid/ui/quisioner/MainActivity.java
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import id.uinic.diagnosacovid.R;
-import id.uinic.diagnosacovid.ui.home.HomeActivity;
-import id.uinic.diagnosacovid.ui.result.ResultActivity;
 import id.uinic.diagnosacovid.database.DatabaseHelper;
+import id.uinic.diagnosacovid.ui.result.ResultActivity;
 
 import static id.uinic.diagnosacovid.util.Const.JAWABAN_KEY;
 import static id.uinic.diagnosacovid.util.Const.RESULT_KEY;
@@ -39,17 +32,12 @@ public class StartDiagnoseActivity extends AppCompatActivity {
     protected Cursor cursor;
     DatabaseHelper dbHelper;
     Dialog dialog;
+    Button btnSelanjutnya;
 
-<<<<<<< HEAD:app/src/main/java/id/uinic/diagnosacovid/ui/startdiagnose/StartDiagnoseActivity.java
     TextView tvPertanyaan;
     RadioGroup rgPilihan;
     RadioButton rbYa, rbTidak;
-=======
-    TextView pertanyaan;
-    RadioGroup radio;
-    RadioButton ya, tidak;
-    Button btnSelanjutnya;
->>>>>>> 1b55b2fa2bc79c939dccc6430f370c6dad783974:app/src/main/java/id/uinic/diagnosacovid/ui/quisioner/MainActivity.java
+
     int nomor = 0;
     Boolean selesai;
     public static int result, jawabanYa, jawabanTidak;
@@ -101,19 +89,11 @@ public class StartDiagnoseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_diagnose);
 
-<<<<<<< HEAD:app/src/main/java/id/uinic/diagnosacovid/ui/startdiagnose/StartDiagnoseActivity.java
         // Call ID
         tvPertanyaan = findViewById(R.id.tv_pertanyaan);
         rgPilihan = findViewById(R.id.rg_pilihan);
         rbYa = findViewById(R.id.rb_ya);
         rbTidak = findViewById(R.id.rb_tidak);
-=======
-        pertanyaan = findViewById(R.id.pertanyaan);
-        radio = findViewById(R.id.pilihan);
-        ya = findViewById(R.id.ya);
-        tidak = findViewById(R.id.tidak);
-        btnSelanjutnya = findViewById(R.id.btn_selanjutnya);
->>>>>>> 1b55b2fa2bc79c939dccc6430f370c6dad783974:app/src/main/java/id/uinic/diagnosacovid/ui/quisioner/MainActivity.java
 
         tvPertanyaan.setText(pertanyaan_diagnosa[nomor]);
         rbYa.setText(jawaban[0]);
