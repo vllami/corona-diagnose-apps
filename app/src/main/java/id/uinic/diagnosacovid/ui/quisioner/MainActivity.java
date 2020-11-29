@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 ya.setText(jawaban[(nomor * 2)]);
                 tidak.setText(jawaban[(nomor * 2) + 1]);
 
-                if (nomor < ( pertanyaan_diagnosa.length - 1)) {
+                if (nomor == ( pertanyaan_diagnosa.length - 1)) {
                     btnSelanjutnya.setText(R.string.lihat_hasil_text);
                 }
 
