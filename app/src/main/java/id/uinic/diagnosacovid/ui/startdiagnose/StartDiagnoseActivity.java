@@ -12,7 +12,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.view.View;
+<<<<<<< HEAD:app/src/main/java/id/uinic/diagnosacovid/ui/startdiagnose/StartDiagnoseActivity.java
 import android.view.ViewGroup;
+=======
+>>>>>>> 1b55b2fa2bc79c939dccc6430f370c6dad783974:app/src/main/java/id/uinic/diagnosacovid/ui/quisioner/MainActivity.java
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -37,9 +40,16 @@ public class StartDiagnoseActivity extends AppCompatActivity {
     DatabaseHelper dbHelper;
     Dialog dialog;
 
+<<<<<<< HEAD:app/src/main/java/id/uinic/diagnosacovid/ui/startdiagnose/StartDiagnoseActivity.java
     TextView tvPertanyaan;
     RadioGroup rgPilihan;
     RadioButton rbYa, rbTidak;
+=======
+    TextView pertanyaan;
+    RadioGroup radio;
+    RadioButton ya, tidak;
+    Button btnSelanjutnya;
+>>>>>>> 1b55b2fa2bc79c939dccc6430f370c6dad783974:app/src/main/java/id/uinic/diagnosacovid/ui/quisioner/MainActivity.java
     int nomor = 0;
     Boolean selesai;
     public static int result, jawabanYa, jawabanTidak;
@@ -91,11 +101,19 @@ public class StartDiagnoseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_diagnose);
 
+<<<<<<< HEAD:app/src/main/java/id/uinic/diagnosacovid/ui/startdiagnose/StartDiagnoseActivity.java
         // Call ID
         tvPertanyaan = findViewById(R.id.tv_pertanyaan);
         rgPilihan = findViewById(R.id.rg_pilihan);
         rbYa = findViewById(R.id.rb_ya);
         rbTidak = findViewById(R.id.rb_tidak);
+=======
+        pertanyaan = findViewById(R.id.pertanyaan);
+        radio = findViewById(R.id.pilihan);
+        ya = findViewById(R.id.ya);
+        tidak = findViewById(R.id.tidak);
+        btnSelanjutnya = findViewById(R.id.btn_selanjutnya);
+>>>>>>> 1b55b2fa2bc79c939dccc6430f370c6dad783974:app/src/main/java/id/uinic/diagnosacovid/ui/quisioner/MainActivity.java
 
         tvPertanyaan.setText(pertanyaan_diagnosa[nomor]);
         rbYa.setText(jawaban[0]);
@@ -123,6 +141,10 @@ public class StartDiagnoseActivity extends AppCompatActivity {
                 tvPertanyaan.setText(pertanyaan_diagnosa[nomor]);
                 rbYa.setText(jawaban[(nomor * 2)]);
                 rbTidak.setText(jawaban[(nomor * 2) + 1]);
+
+                if (nomor == ( pertanyaan_diagnosa.length - 1)) {
+                    btnSelanjutnya.setText(R.string.lihat_hasil_text);
+                }
 
             } else {
                 result = jawabanYa * 10;
