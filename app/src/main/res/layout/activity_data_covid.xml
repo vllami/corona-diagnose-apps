@@ -149,7 +149,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="4dp"
+                            android:layout_marginBottom="3.5dp"
                             android:fontFamily="@font/nunito"
                             android:text="@string/data_covid_positif"
                             android:textColor="@color/colorDarkGray" />
@@ -195,7 +195,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="4dp"
+                            android:layout_marginBottom="3.5dp"
                             android:fontFamily="@font/nunito"
                             android:text="@string/data_covid_dirawat"
                             android:textColor="@color/colorDarkGray" />
@@ -233,7 +233,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="4dp"
+                            android:layout_marginBottom="3.5dp"
                             android:fontFamily="@font/nunito"
                             android:text="@string/data_covid_sembuh"
                             android:textColor="@color/colorDarkGray" />
@@ -271,7 +271,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="4dp"
+                            android:layout_marginBottom="3.5dp"
                             android:fontFamily="@font/nunito"
                             android:text="@string/data_covid_meninggal"
                             android:textColor="@color/colorDarkGray" />
