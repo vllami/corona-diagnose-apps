@@ -143,27 +143,17 @@ public class StartDiagnoseActivity extends AppCompatActivity {
         }
     }
 
-<<<<<<< HEAD
-    private void simpanDataDiagnosa() {
-        @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("dd MMM yyyy - HH:mm:ss");
-=======
     private void simpanDataDiagnosa(int jawabanYaFinal, int resultFinal) {
-        @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
->>>>>>> c45e82ad47ae32d4e094773a07aa8c7c4679b3c6
+        @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("dd MMM yyyy HH:mm:ss");
         String dateTime = df.format(Calendar.getInstance().getTime());
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.execSQL("insert into diagnosa(tanggal_diagnosa, jawabanYa, result) values('" +
                 dateTime + "','" +
-<<<<<<< HEAD
-                jawabanYa + "','" +
-                result + "')");
-=======
                 jawabanYaFinal + "','" +
                 resultFinal + "')");
         Toast.makeText(getApplicationContext(), "Berhasil",
                 Toast.LENGTH_LONG).show();
->>>>>>> c45e82ad47ae32d4e094773a07aa8c7c4679b3c6
         finish();
     }
 
