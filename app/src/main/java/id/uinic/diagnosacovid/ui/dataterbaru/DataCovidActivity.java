@@ -19,6 +19,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static id.uinic.diagnosacovid.util.NetworkUtility.isNetworkConnected;
+
 public class DataCovidActivity extends AppCompatActivity {
     ActivityDataCovidBinding bind;
 
@@ -26,7 +28,12 @@ public class DataCovidActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bind = DataBindingUtil.setContentView(this, R.layout.activity_data_covid);
-        getDataCovid();
+        if (isNetworkConnected(this)){
+            getDataCovid();
+        } else {
+            Toast.makeText(this, "Periksa Jaringan Anda", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     private void getDataCovid() {
