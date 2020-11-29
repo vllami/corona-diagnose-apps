@@ -1,16 +1,11 @@
 package id.uinic.diagnosacovid.ui.startdiagnose;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -19,14 +14,15 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import id.uinic.diagnosacovid.R;
-import id.uinic.diagnosacovid.ui.home.HomeActivity;
-import id.uinic.diagnosacovid.ui.result.ResultActivity;
 import id.uinic.diagnosacovid.database.DatabaseHelper;
+import id.uinic.diagnosacovid.ui.result.ResultActivity;
 
 import static id.uinic.diagnosacovid.util.Const.JAWABAN_KEY;
 import static id.uinic.diagnosacovid.util.Const.RESULT_KEY;
@@ -36,11 +32,11 @@ public class StartDiagnoseActivity extends AppCompatActivity {
     protected Cursor cursor;
     DatabaseHelper dbHelper;
     Dialog dialog;
+    Button btnSelanjutnya;
 
     TextView tvPertanyaan;
     RadioGroup rgPilihan;
     RadioButton rbYa, rbTidak;
-    Button btnSelanjutnya;
     int nomor = 0;
     Boolean selesai;
     public static int result, jawabanYa, jawabanTidak;
@@ -97,6 +93,8 @@ public class StartDiagnoseActivity extends AppCompatActivity {
         rgPilihan = findViewById(R.id.rg_pilihan);
         rbYa = findViewById(R.id.rb_ya);
         rbTidak = findViewById(R.id.rb_tidak);
+
+        btnSelanjutnya = findViewById(R.id.btn_selanjutnya);
 
         tvPertanyaan.setText(pertanyaan_diagnosa[nomor]);
         rbYa.setText(jawaban[0]);

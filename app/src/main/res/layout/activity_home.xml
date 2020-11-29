@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_header"
-        app:layout_constraintVertical_bias="0.54"
+        app:layout_constraintVertical_bias="0.53"
         tools:ignore="UnusedAttribute" />
 
     <ImageView
