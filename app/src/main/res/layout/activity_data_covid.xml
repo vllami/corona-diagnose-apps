@@ -141,7 +141,7 @@
                             android:gravity="center"
                             android:text="@{dataCovid.positif}"
                             android:textColor="@color/colorBlue"
-                            android:textSize="22sp"
+                            android:textSize="20sp"
                             android:textStyle="bold"
                             tools:text="Jumlah" />
 
@@ -187,7 +187,7 @@
                             android:gravity="center"
                             android:text="@{dataCovid.dirawat}"
                             android:textColor="@color/colorOrange"
-                            android:textSize="22sp"
+                            android:textSize="20sp"
                             android:textStyle="bold"
                             tools:text="Jumlah" />
 
@@ -225,7 +225,7 @@
                             android:gravity="center"
                             android:text="@{dataCovid.sembuh}"
                             android:textColor="@color/colorGreen"
-                            android:textSize="22sp"
+                            android:textSize="20sp"
                             android:textStyle="bold"
                             tools:text="Jumlah" />
 
@@ -263,7 +263,7 @@
                             android:gravity="center"
                             android:text="@{dataCovid.meninggal}"
                             android:textColor="@color/colorRed"
-                            android:textSize="22sp"
+                            android:textSize="20sp"
                             android:textStyle="bold"
                             tools:text="Jumlah" />
 
