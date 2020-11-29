@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.aboutcovid.AboutTeamActivity" />
+        <activity android:name=".ui.developerprofile.AboutTeamActivity" />
         <activity android:name=".ui.datacovid.DataCovidActivity" />
         <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.startdiagnose.StartDiagnoseActivity" />

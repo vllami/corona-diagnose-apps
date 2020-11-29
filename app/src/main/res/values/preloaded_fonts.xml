@@ -3,6 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/nunito</item>
         <item>@font/nunito_black</item>
+        <item>@font/nunito_bold</item>
         <item>@font/nunito_extrabold</item>
         <item>@font/nunito_light</item>
     </array>

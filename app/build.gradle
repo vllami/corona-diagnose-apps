@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    //retrofit
+    // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.8.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
     implementation 'com.google.code.gson:gson:2.8.5'
@@ -50,5 +50,6 @@ dependencies {
     //Circle Image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    
+    // Palette
+    implementation 'androidx.palette:palette:1.0.0'
 }
