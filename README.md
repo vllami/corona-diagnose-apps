@@ -1,2 +1,2 @@
-# CekovApps
-Application to diagnose COVID-19 in Indonesia.
+# API
+https://kawalcorona.com/api/
